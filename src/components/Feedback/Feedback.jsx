@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Section from "../Section/Section";
 import FeedbackOptions from "../FeedbackOptions/FeedbackOptions";
 import Statistics from "../Statistics/Statistics";
-import FeedbackContainer from "./Feedback.styled";
+import { FeedbackContainer } from "./Feedback.styled";
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState({
@@ -21,7 +21,7 @@ const Feedback = () => {
   const total = feedback.good + feedback.neutral + feedback.bad;
   const positivePercentage = total === 0 ? 0 : (feedback.good / total) * 100;
 
-  const options = ["good", "neutral", "bad"];
+  const options = Object.keys(feedback);
 
   return (
     <FeedbackContainer>
