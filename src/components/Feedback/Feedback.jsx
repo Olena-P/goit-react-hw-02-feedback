@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Section from "../Section/Section";
 import FeedbackOptions from "../FeedbackOptions/FeedbackOptions";
 import Statistics from "../Statistics/Statistics";
+import FeedbackContainer from "./Feedback.styled";
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState({
@@ -23,7 +24,7 @@ const Feedback = () => {
   const options = ["good", "neutral", "bad"];
 
   return (
-    <div>
+    <FeedbackContainer>
       <Section title="Please leave your feedback">
         <FeedbackOptions
           options={options}
@@ -46,7 +47,7 @@ const Feedback = () => {
           <p>There is no feedback</p>
         </Section>
       )}
-    </div>
+    </FeedbackContainer>
   );
 };
 
